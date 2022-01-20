@@ -7,8 +7,8 @@ LABEL Author="IgorKha"
 
 ARG ARCH="amd64"
 ARG OS="linux"
-COPY snmp_exporter  /bin/snmp_exporter
-COPY snmp.yml       /etc/snmp_exporter/snmp.yml
+COPY /snmp/snmp_exporter  /bin/snmp_exporter
+COPY /snmp/snmp.yml       /etc/snmp_exporter/snmp.yml
 
 EXPOSE      9116
 ENTRYPOINT  [ "/bin/snmp_exporter" ]
