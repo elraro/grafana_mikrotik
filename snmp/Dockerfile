@@ -2,13 +2,15 @@ ARG ARCH="amd64"
 ARG OS="linux"
 FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 LABEL maintainer="The Prometheus Authors <prometheus-developers@googlegroups.com>"
-LABEL Software="snmp_exporter prometheus for mikrotik"
-LABEL Author="IgorKha"
+LABEL Software="snmp_exporter prometheus for Mikrotik"
+LABEL Author="IgorKha, elraro"
 
-ARG ARCH="amd64"
-ARG OS="linux"
-COPY /snmp/snmp_exporter  /bin/snmp_exporter
-COPY /snmp/snmp.yml       /etc/snmp_exporter/snmp.yml
+RUN curl https://github.com/prometheus/snmp_exporter/releases/download/v0.20.0/snmp_exporter-0.20.0.linux-amd64.tar.gz \
+&& tar zxvf --strip-components 1 snmp_exporter-0.20.0.linux-amd64.tar.gz \
+&& mv snmp_exporter /bin/snmp_exporter \
+&& mv snmp.yml /etc/snmp_exporter/snmp.yml \
+&& rm -y LICENSE \
+&& rm -y NOTICE
 
 EXPOSE      9116
 ENTRYPOINT  [ "/bin/snmp_exporter" ]
