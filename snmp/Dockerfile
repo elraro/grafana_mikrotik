@@ -10,8 +10,8 @@ RUN wget https://github.com/prometheus/snmp_exporter/releases/download/v0.20.0/s
 && mv snmp_exporter /bin/snmp_exporter \
 && mkdir /etc/snmp_exporter \
 && mv snmp.yml /etc/snmp_exporter/snmp.yml \
-&& rm -y LICENSE \
-&& rm -y NOTICE \
+&& rm  LICENSE \
+&& rm  NOTICE \
 && rm snmp_exporter-0.20.0.linux-amd64.tar.gz
 
 EXPOSE      9116
