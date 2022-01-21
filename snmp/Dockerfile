@@ -14,7 +14,7 @@ RUN wget https://github.com/prometheus/snmp_exporter/releases/download/v0.20.0/s
 && rm NOTICE \
 && rm snmp_exporter-0.20.0.linux-amd64.tar.gz
 
-COPY snmp.yml /etc/snmp_exporter/snmp.yml
+COPY /snmp/snmp.yml /etc/snmp_exporter/snmp.yml
 
 EXPOSE      9116
 ENTRYPOINT  [ "/bin/snmp_exporter" ]
