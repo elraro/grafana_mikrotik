@@ -2638,9 +2638,9 @@ mikrotik:
       5: dW
       6: status
   - name: mtxrLicSoftwareId
-    oid: 1.3.6.1.4.1.14988.1.1.4.1
+    oid: 1.3.6.1.4.1.14988.1.1.4.1.0
     type: DisplayString
-    help: software id - 1.3.6.1.4.1.14988.1.1.4.1
+    help: software id - 1.3.6.1.4.1.14988.1.1.4.1.0
   - name: mtxrLicUpgrUntil
     oid: 1.3.6.1.4.1.14988.1.1.4.2
     type: DateAndTime
